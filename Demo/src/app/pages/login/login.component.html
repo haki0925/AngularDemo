@@ -1,0 +1,23 @@
+<!-- login.component.html -->
+
+<div class="login-container">
+  <h2>Login</h2>
+  <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+
+    <!-- 使用者名稱輸入 -->
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" [(ngModel)]="user.username" required>
+    </div>
+
+    <!-- 密碼輸入 -->
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" [(ngModel)]="user.password" required>
+    </div>
+
+    <!-- 登入按鈕 -->
+    <button type="submit" [disabled]="!loginForm.valid">Login</button>
+  </form>
+</div>
+
